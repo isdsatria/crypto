@@ -1,0 +1,13 @@
+server:
+  port: 7777
+
+spring:
+  r2dbc.url: r2dbc:mariadb://localhost/cashwallet
+  r2dbc.username: root
+  r2dbc.password:
+
+logging:
+  level:
+    root : debug
+    org.springframework.web : info
+
