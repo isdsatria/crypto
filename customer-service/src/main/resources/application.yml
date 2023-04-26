@@ -1,0 +1,12 @@
+server:
+  port: 7778
+
+spring:
+  r2dbc.url: r2dbc:mariadb://localhost/customer
+  r2dbc.username: root
+  r2dbc.password:
+
+logging:
+  level:
+    root : debug
+    org.springframework.web : info
