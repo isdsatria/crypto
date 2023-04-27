@@ -1,15 +1,13 @@
-package com.achsat.crypto.account;
+package com.achsat.crypto.testkafka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.kafka.annotation.KafkaListener;
 
 @SpringBootApplication
-public class WalletApplication {
+public class TestkafkaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WalletApplication.class, args);
+		SpringApplication.run(TestkafkaApplication.class, args);
 	}
-
 
 }
