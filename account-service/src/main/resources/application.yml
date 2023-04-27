@@ -5,6 +5,14 @@ spring:
   r2dbc.url: r2dbc:mariadb://localhost/cashwallet
   r2dbc.username: root
   r2dbc.password:
+  security:
+    oauth2:
+      resourceserver:
+         jwt:
+          issuer-uri: http://localhost:8080/realms/crypto
+          jwk-set-uri: http://localhost:8080/realms/crypto/protocol/openid-connect/certs
+
+
 
 logging:
   level:
