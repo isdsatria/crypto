@@ -1,11 +1,10 @@
 package com.achsat.crypto.account.controller;
 
 import com.achsat.crypto.account.model.CashAccount;
-import com.achsat.crypto.account.model.dto.TransactionDTO;
+import com.achsat.crypto.dto.TransactionDTO;
 import com.achsat.crypto.account.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
