@@ -2,9 +2,11 @@ server:
   port: 7778
 
 spring:
-  r2dbc.url: r2dbc:mariadb://localhost/customer
-  r2dbc.username: root
-  r2dbc.password:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/customer
+    username: root
+    password:
 
 logging:
   level:

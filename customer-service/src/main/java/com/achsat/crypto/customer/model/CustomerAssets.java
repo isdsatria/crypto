@@ -1,27 +1,28 @@
 package com.achsat.crypto.customer.model;
 
+import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+
 
 import java.math.BigDecimal;
 
 @Data
-@Table("customer_assets")
+@Table(name="customer_assets")
+@Entity
 public class CustomerAssets {
 
     @Id
-    @Column("asset_id")
-    private Integer assetId;
+    @Column(name="asset_id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id;
 
-    @Column("customer_id")
+    @Column(name="customer_id")
     private Integer customerId;
 
-    @Column("coin_id")
+    @Column(name="coin_id")
     private Integer coinId;
 
-    @Column("qty")
+    @Column(name="qty")
     private BigDecimal qty;
 
 }

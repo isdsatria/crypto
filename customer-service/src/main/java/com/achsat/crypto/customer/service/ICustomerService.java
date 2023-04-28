@@ -2,18 +2,18 @@ package com.achsat.crypto.customer.service;
 
 import com.achsat.crypto.customer.model.Customer;
 import com.achsat.crypto.customer.model.CustomerAssets;
-import com.achsat.crypto.customer.model.dto.AssetDTO;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+import com.achsat.crypto.dto.AssetDTO;
+import com.achsat.crypto.dto.CustomerDTO;
+
+
+import java.util.List;
 
 public interface ICustomerService {
 
-    Mono<Customer> findCustomerById();
+    CustomerDTO findCustomerById(Integer id);
 
-    Flux<CustomerAssets> getAllCustomerAssets();
+    CustomerDTO findCustomerByEmail(String email);
 
-    Mono<Void> addNewAsset(AssetDTO dto);
-
-    Mono<Void> updateExistingAsset(AssetDTO dto);
+    void addNewCustomer(CustomerDTO dto);
 
 }

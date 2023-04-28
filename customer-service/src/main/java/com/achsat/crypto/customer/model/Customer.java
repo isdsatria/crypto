@@ -1,20 +1,21 @@
 package com.achsat.crypto.customer.model;
 
+import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+
 
 @Data
-@Table("customer")
+@Table(name="customer")
+@Entity
 public class Customer {
     @Id
-    @Column("customer_id")
-    private Integer customerId;
+    @Column(name="customer_id")
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id;
 
-    @Column("name")
+    @Column(name="name")
     private String name;
 
-    @Column("email")
+    @Column(name="email")
     private String email;
 }
