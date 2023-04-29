@@ -1,0 +1,19 @@
+server.port: 8082
+spring.application.name: payment
+spring.kafka:
+  bootstrap-servers: relieved-bull-11602-us1-kafka.upstash.io:9092
+  consumer:
+    key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  properties:
+    spring.json.trusted.packages: "*"
+    security.protocol: SASL_SSL
+    sasl.mechanism: SCRAM-SHA-256
+    sasl.jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username="cmVsaWV2ZWQtYnVsbC0xMTYwMiSK_LVfdlU9eGK5O4UoDFR_WDVhZNs1QAlsx3w" password="22b2babe0c1d42d7aa3c5560ef6959f6";
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.LongSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+spring.output.ansi.enabled: ALWAYS
+
+logging.pattern.console: "%clr(%d{HH:mm:ss.SSS}){blue} %clr(---){faint} %clr([%15.15t]){yellow} %clr(:){red} %clr(%m){faint}%n"
