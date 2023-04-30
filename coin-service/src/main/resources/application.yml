@@ -1,4 +1,3 @@
-server.port: 8081
 spring.application.name: coin
 spring.kafka:
   bootstrap-servers: relieved-bull-11602-us1-kafka.upstash.io:9092

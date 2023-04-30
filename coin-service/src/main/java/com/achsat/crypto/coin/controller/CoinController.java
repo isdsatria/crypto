@@ -12,7 +12,7 @@ public class CoinController {
     @Autowired
     private CoinService coinService;
 
-    @PostMapping
+    @PostMapping("/addCoin")
     public Coin addCoin(@RequestBody Coin coin) {
         return coinService.addCoin(coin);
     }
@@ -22,8 +22,8 @@ public class CoinController {
         return ResponseEntity.ok(coinService.getAllCoins());
     }
 
-    @GetMapping("/name")
-    public ResponseEntity<?> getCoinByName(@RequestParam String name) {
+    @GetMapping("/name/{name}")
+    public ResponseEntity<?> getCoinByName(@PathVariable String name) {
         return ResponseEntity.ok(coinService.getCoinByName(name));
     }
 

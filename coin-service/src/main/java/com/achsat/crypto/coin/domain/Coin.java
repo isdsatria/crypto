@@ -1,9 +1,6 @@
 package com.achsat.crypto.coin.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,13 +11,19 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name="coins")
 public class Coin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "price")
     private int price;
+    @Column(name = "reserved_items")
     private int reservedItems;
+    @Column(name = "available_items")
     private int availableItems;
 
     public Coin(Long id, String name, int availableItems, int reservedItems) {

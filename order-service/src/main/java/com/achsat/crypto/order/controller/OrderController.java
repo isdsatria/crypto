@@ -1,7 +1,6 @@
 package com.achsat.crypto.order.controller;
 
 import com.achsat.crypto.dto.Order;
-import com.achsat.crypto.dto.TransactionDTO;
 import com.achsat.crypto.order.service.OrderService;
 import org.apache.kafka.streams.StoreQueryParameters;
 import org.apache.kafka.streams.state.KeyValueIterator;
@@ -18,8 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
@@ -42,11 +41,16 @@ public class OrderController {
     }
 
     @PostMapping("/order")
-    public Order create(@RequestBody Order order) {
-        order.setId(id.incrementAndGet());
-        template.send("orders", order.getId(), order);
+    public ResponseEntity<?> create(@RequestBody Order order) {
+        Order savedOrder = orderService.addOrder(order);
+        template.send("orders", order.getId(), savedOrder);
         LOG.info("Sent: {}", order);
-        return order;
+        return ResponseEntity.ok(savedOrder);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllOrders() {
+        return ResponseEntity.ok(orderService.getAllOrders());
     }
 
     @GetMapping
@@ -63,9 +67,9 @@ public class OrderController {
     }
 
     @GetMapping("/id/{orderId}")
-    public ResponseEntity<Order> getOrderById(@PathVariable Long orderId) {
-        Order order = orderService.getOrderById(orderId);
-        if (order != null) {
+    public ResponseEntity<?> getOrderById(@PathVariable Long orderId) {
+        Optional<Order> order = orderService.getOrderById(orderId);
+        if (order.isPresent()) {
             return new ResponseEntity<>(order, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

@@ -37,17 +37,17 @@ public class CoinApp {
             orderManageService.confirm(o);
     }
 
-    @Autowired
-    private CoinRepository coinRepository;
+//    @Autowired
+//    private CoinRepository coinRepository;
 
-    @PostConstruct
-    public void generateData() {
-        Random r = new Random();
-        for (int i = 0; i < 1000; i++) {
-            int count = r.nextInt(10, 1000);
-            Coin c = new Coin(null, "Coin" + i, count, 0);
-            coinRepository.save(c);
-        }
-    }
+//    @PostConstruct
+//    public void generateData() {
+//        Random r = new Random();
+//        for (int i = 0; i < 1000; i++) {
+//            int count = r.nextInt(10, 1000);
+//            Coin c = new Coin(null, "Coin" + i, count, 0);
+//            coinRepository.save(c);
+//        }
+//    }
 
 }

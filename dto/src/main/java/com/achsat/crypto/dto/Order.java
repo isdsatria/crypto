@@ -1,37 +1,34 @@
 package com.achsat.crypto.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
-
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
+@Entity
+@Table(name="orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "customer_id")
     private Long customerId;
+    @Column(name = "coin_id")
     private Long coinId;
+    @Column(name = "coin_count")
     private int coinCount;
+    @Column(name = "price")
     private int price;
+    @Column(name = "status")
     private String status;
+    @Column(name = "source")
     private String source;
-
+    @Column(name = "transaction_date")
     private Date transactionDate;
-
-
-    public Order(Long id, Long customerId, Long coinId, String status) {
-        this.id = id;
-        this.customerId = customerId;
-        this.coinId = coinId;
-        this.status = status;
-    }
 
     public Order(Long id, Long customerId, Long coinId, int coinCount, int price) {
         this.id = id;
@@ -42,6 +39,16 @@ public class Order {
         this.status = "NEW";
     }
 
+    public Order(Long id, Long customerId, Long coinId, int coinCount, int price, Date transactionDate, String source, String status) {
+        this.id = id;
+        this.customerId = customerId;
+        this.coinId = coinId;
+        this.coinCount = coinCount;
+        this.price = price;
+        this.status = status;
+        this.source = "CONFIRMED";
+        this.transactionDate = new Date();
+    }
 
     @Override
     public String toString() {
