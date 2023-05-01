@@ -1,6 +1,6 @@
 package com.achsat.crypto.order.controller;
 
-import com.achsat.crypto.dto.Order;
+import com.achsat.crypto.entity.dto.Order;
 import com.achsat.crypto.order.service.OrderService;
 import org.apache.kafka.streams.StoreQueryParameters;
 import org.apache.kafka.streams.state.KeyValueIterator;

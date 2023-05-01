@@ -1,6 +1,6 @@
 package com.achsat.crypto.order.service;
 
-import com.achsat.crypto.dto.Order;
+import com.achsat.crypto.entity.dto.Order;
 
 import java.util.List;
 import java.util.Optional;

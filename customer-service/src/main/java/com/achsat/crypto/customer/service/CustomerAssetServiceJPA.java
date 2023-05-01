@@ -2,7 +2,7 @@ package com.achsat.crypto.customer.service;
 
 import com.achsat.crypto.customer.model.CustomerAssets;
 import com.achsat.crypto.customer.repository.CustomerAssetsRepository;
-import com.achsat.crypto.dto.AssetDTO;
+import com.achsat.crypto.entity.dto.AssetDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.achsat.crypto.account.controller;
 
-import com.achsat.crypto.account.model.CashAccount;
-import com.achsat.crypto.dto.TransactionDTO;
+import com.achsat.crypto.entity.model.CashAccount;
+import com.achsat.crypto.entity.dto.TransactionDTO;
 import com.achsat.crypto.account.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +24,12 @@ public class AccountController {
 
     @PostMapping("/fin/topup")
     private ResponseEntity<Mono<Void>> Topup(@RequestBody TransactionDTO txn){
-        return ResponseEntity.ok(service.IncreaseBalance(txn.getAccountID(), txn.getAmount()));
+        return ResponseEntity.ok(service.increaseBalance(txn.getAccountID(), txn.getAmount()));
     }
 
     @PostMapping("/fin/withdraw")
     private ResponseEntity<Mono<Void>> Withdraw(@RequestBody TransactionDTO txn){
-        return ResponseEntity.ok(service.DecreaseBalance(txn.getAccountID(), txn.getAmount()));
+        return ResponseEntity.ok(service.decreaseBalance(txn.getAccountID(), txn.getAmount()));
     }
 
 }

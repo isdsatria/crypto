@@ -1,6 +1,6 @@
 package com.achsat.crypto.order.repository;
 
-import com.achsat.crypto.dto.Order;
+import com.achsat.crypto.entity.dto.Order;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

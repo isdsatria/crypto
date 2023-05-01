@@ -1,6 +1,6 @@
 package com.achsat.crypto.order;
 
-import com.achsat.crypto.dto.Order;
+import com.achsat.crypto.entity.dto.Order;
 import com.achsat.crypto.order.service.OrderManageService;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsBuilder;

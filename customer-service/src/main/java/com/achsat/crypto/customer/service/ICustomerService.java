@@ -1,12 +1,6 @@
 package com.achsat.crypto.customer.service;
 
-import com.achsat.crypto.customer.model.Customer;
-import com.achsat.crypto.customer.model.CustomerAssets;
-import com.achsat.crypto.dto.AssetDTO;
-import com.achsat.crypto.dto.CustomerDTO;
-
-
-import java.util.List;
+import com.achsat.crypto.entity.dto.CustomerDTO;
 
 public interface ICustomerService {
 

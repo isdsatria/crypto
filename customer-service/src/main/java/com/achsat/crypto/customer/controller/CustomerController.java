@@ -1,7 +1,7 @@
 package com.achsat.crypto.customer.controller;
 
 import com.achsat.crypto.customer.service.ICustomerService;
-import com.achsat.crypto.dto.CustomerDTO;
+import com.achsat.crypto.entity.dto.CustomerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,6 @@
 package com.achsat.crypto.account.service;
 
-import com.achsat.crypto.dto.TransactionDTO;
+import com.achsat.crypto.entity.dto.TransactionDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;

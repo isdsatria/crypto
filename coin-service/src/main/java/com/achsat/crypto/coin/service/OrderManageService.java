@@ -1,6 +1,6 @@
 package com.achsat.crypto.coin.service;
 
-import com.achsat.crypto.dto.Order;
+import com.achsat.crypto.entity.dto.Order;
 import com.achsat.crypto.coin.domain.Coin;
 import com.achsat.crypto.coin.repository.CoinRepository;
 import org.slf4j.Logger;

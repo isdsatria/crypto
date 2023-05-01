@@ -18,9 +18,9 @@
         <module>account-service</module>
 		<module>customer-service</module>
 		<module>order-service</module>
-		<module>payment-service</module>
+		<module>account-kafka-service</module>
 		<module>coin-service</module>
-        <module>dto</module>
+        <module>entity</module>
 		<module>testkafka</module>
 	</modules>
     <properties>

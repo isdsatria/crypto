@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>com.achsat.crypto</groupId>
-            <artifactId>dto</artifactId>
+            <artifactId>entity</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

@@ -1,13 +1,12 @@
 package com.achsat.crypto.testkafka.controller;
 
-import com.achsat.crypto.dto.TransactionDTO;
+import com.achsat.crypto.entity.dto.TransactionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.Date;
 

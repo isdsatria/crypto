@@ -1,6 +1,6 @@
 package com.achsat.crypto.customer.service;
 
-import com.achsat.crypto.dto.AssetDTO;
+import com.achsat.crypto.entity.dto.AssetDTO;
 
 import java.util.List;
 
