@@ -18,7 +18,7 @@ public class TransactionHistory {
 
     @Id
     @Column(name="transaction_history_id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer transactionHistoryId;
 
     @Column(name="account_id")

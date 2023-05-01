@@ -13,7 +13,7 @@ public class CustomerAssets {
 
     @Id
     @Column(name="asset_id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name="customer_id")
