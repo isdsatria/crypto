@@ -1,13 +1,10 @@
-package com.achsat.crypto.entity.model;
+package com.achsat.crypto.payment.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-//import org.springframework.data.annotation.Id;
-//import org.springframework.data.relational.core.mapping.Column;
-//import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

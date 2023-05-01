@@ -1,7 +1,7 @@
 package com.achsat.crypto.payment.service;
 
-import com.achsat.crypto.entity.model.CashAccount;
-import com.achsat.crypto.entity.model.TransactionHistory;
+import com.achsat.crypto.payment.model.CashAccount;
+import com.achsat.crypto.payment.model.TransactionHistory;
 import com.achsat.crypto.entity.dto.Order;
 import com.achsat.crypto.payment.repository.AccountRepository;
 import com.achsat.crypto.payment.repository.TransactionHistoryRepository;

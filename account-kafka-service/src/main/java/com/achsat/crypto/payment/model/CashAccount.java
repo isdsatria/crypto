@@ -1,11 +1,8 @@
-package com.achsat.crypto.entity.model;
+package com.achsat.crypto.payment.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
-//import org.springframework.data.annotation.Id;
-//import org.springframework.data.relational.core.mapping.Column;
-//import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
