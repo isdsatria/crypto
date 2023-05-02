@@ -26,6 +26,7 @@ public class OrderManageService {
     @Autowired
     private TransactionHistoryRepository txnRepo;
 
+    @Autowired
     private KafkaTemplate<Long, Order> template;
 
     @Transactional
@@ -34,7 +35,7 @@ public class OrderManageService {
 
         if(account.isPresent()) {
             LOG.info("Found: {}", account);
-            if (BigDecimal.valueOf(order.getPrice()).compareTo(account.get().getCashBalance()) > 0) {
+            if (BigDecimal.valueOf(order.getPrice()).compareTo(account.get().getCashBalance()) < 0) {
                 order.setStatus("ACCEPT");
                 account.get().setReservedBalance(account.get().getReservedBalance().add(BigDecimal.valueOf(order.getPrice())));
                 account.get().setCashBalance(account.get().getCashBalance().subtract(BigDecimal.valueOf(order.getPrice())));

@@ -25,7 +25,7 @@ import java.time.Duration;
 @EnableKafkaStreams
 @EnableAsync
 @EnableJpaRepositories(basePackages = "com.achsat.crypto.order.repository")
-@EntityScan(basePackages = "com.achsat.crypto.dto")
+@EntityScan(basePackages = "com.achsat.crypto.entity")
 public class OrderApp {
 
     private static final Logger LOG = LoggerFactory.getLogger(OrderApp.class);
