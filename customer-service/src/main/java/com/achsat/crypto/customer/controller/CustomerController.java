@@ -13,12 +13,12 @@ public class CustomerController {
     @Autowired
     ICustomerService service;
 
-    @GetMapping("/byid")
+    @GetMapping("/get/byid")
     public ResponseEntity<?> getCustomerById(@RequestParam Integer id ) {
         return ResponseEntity.ok(service.findCustomerById(id));
     }
 
-    @GetMapping("/byemail")
+    @GetMapping("/get/byemail")
     public ResponseEntity<?> getCustomerByEmail(@RequestParam String email ){
         return ResponseEntity.ok(service.findCustomerByEmail(email));
     }
