@@ -20,6 +20,7 @@ public class SecurityConfig {
                 (auth) -> auth
                         .requestMatchers("/customer/get").hasAuthority("SCOPE_customer-inquiry")
                         .requestMatchers("/customer/create").hasAuthority("SCOPE_customer-update")
+                        .requestMatchers("/assets/**").hasAuthority("SCOPE_customer-inquiry")
                         .anyRequest()
                         .authenticated()
                 ).oauth2ResourceServer(
