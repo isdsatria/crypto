@@ -31,19 +31,20 @@ public class CustomerAssetServiceJPA implements ICustomerAssetService {
 
     @Override
     @Transactional
-    public void addNewAsset(AssetDTO dto) {
-        CustomerAssets a= new CustomerAssets();
-        a.setCustomerId(dto.getCustomerId());
-        a.setCoinId(dto.getCoinId());
-        a.setQty(dto.getQty());
+    public void addAsset(AssetDTO dto) {
+        Optional<CustomerAssets> current = custAsset.findByCoinId(dto.getCoinId());
+        if (current.isPresent()){
+            current.get().setQty(current.get().getQty().add(dto.getQty()));
+            custAsset.save(current.get());
+        }else {
+            CustomerAssets _new = new CustomerAssets();
+            _new.setCustomerId(dto.getCustomerId());
+            _new.setCoinId(dto.getCoinId());
+            _new.setQty(dto.getQty());
+            custAsset.save(_new);
+        }
     }
 
-    @Transactional
-    @Override
-    public void updateExistingAsset(AssetDTO dto) {
-        Optional<CustomerAssets> a = custAsset.findById(dto.getAssetId());
-        a.get().setQty(dto.getQty());
-        custAsset.save(a.get());
-    }
+
 
 }

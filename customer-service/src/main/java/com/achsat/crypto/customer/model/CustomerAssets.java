@@ -17,10 +17,10 @@ public class CustomerAssets {
     private Integer id;
 
     @Column(name="customer_id")
-    private Integer customerId;
+    private Long customerId;
 
     @Column(name="coin_id")
-    private Integer coinId;
+    private Long coinId;
 
     @Column(name="qty")
     private BigDecimal qty;

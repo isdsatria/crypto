@@ -8,7 +8,6 @@ public interface ICustomerAssetService {
 
     List<AssetDTO> getAllCustomerAssets(Integer id);
 
-    void addNewAsset(AssetDTO dto);
+    void addAsset(AssetDTO dto);
 
-    void updateExistingAsset(AssetDTO dto);
 }

@@ -13,9 +13,9 @@ public class AssetDTO {
 
     private Integer assetId;
 
-    private Integer customerId;
+    private Long customerId;
 
-    private Integer coinId;
+    private Long coinId;
 
     private BigDecimal qty;
 
