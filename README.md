@@ -7,7 +7,7 @@ Terdiri dari 5 microservices yang saling berhubungan melalui kafka.
 
 Brief overview mengenai service-service diatas:
 
-**Account-service**  : Penyimpanan & pemrosesan saldo tunai dari customer
+**Account-service**  : Penyimpanan & pemrosesan saldo tunai dari customer (service ini dibuat menggunakan WebFlux + R2DBC untuk koneksi Databasenya)
 
 **Coin-service**     : Penyimpanan & pemrosesan koin yang tersedia untuk dibeli oleh customer
 
