@@ -19,7 +19,8 @@ Brief overview mengenai service-service diatas:
                        Apabila kedua service diatas mengirimkan pesan "ACCEPT", maka order-service akan mengirim message "CONFIRMED", yang akan men-trigger proses otorisasi transaksi pada account-service & coin-service, serta penambahan jumlah asset yang dimiliki pada customer-service.
                        
                        
-<hr></hr>                    
+<hr></hr>
+<b>Terkait Kafka : </b> Topics kafka seluruhnya di host pada Upstash
 <b>Terkait Security : </b> Seluruh microservice diatas diset sebagai OAuth2 resource server, menggunakan keycloak sebagai authencation & authorization provider. Konfigurasi keycloak untuk project ini disertakan di dalam project (file keycloak-crypto-base-realm) <br><br>
 <b>Terkait database : </b> File export DDL database juga sudah kami sertakan (file **.sql)
                        
