@@ -1,39 +1,39 @@
-package com.achsat.crypto.account.model;
+package com.achsat.crypto.payment.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
+@Entity
 @AllArgsConstructor
 @RequiredArgsConstructor
-@Table("transaction_history")
+@Table(name="transaction_history")
 public class TransactionHistory {
 
     @Id
-    @Column("transaction_history_id")
+    @Column(name="transaction_history_id")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer transactionHistoryId;
 
-    @Column("account_id")
+    @Column(name="account_id")
     @NonNull
     private Integer accountId;
 
-    @Column("transaction_type")
+    @Column(name="transaction_type")
     @NonNull
     private String transactionType;
 
-    @Column("transaction_amount")
+    @Column(name="transaction_amount")
     @NonNull
     private BigDecimal transactionAmount;
 
-    @Column("transaction_date")
+    @Column(name="transaction_date")
     @NonNull
     private LocalDateTime transactionDate;
 

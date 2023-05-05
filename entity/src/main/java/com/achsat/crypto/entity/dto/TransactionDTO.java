@@ -1,4 +1,4 @@
-package com.achsat.crypto.account.model.dto;
+package com.achsat.crypto.entity.dto;
 
 import lombok.Data;
 

@@ -1,0 +1,16 @@
+server:
+  port: 7766
+
+spring:
+  kafka:
+    bootstrap-servers: choice-bird-13111-us1-kafka.upstash.io:9092
+    properties:
+      security.protocol: SASL_SSL
+      sasl.mechanism: SCRAM-SHA-256
+      sasl.jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username="Y2hvaWNlLWJpcmQtMTMxMTEkWe2x-j9DaWJuXOFr0sJIntSo8VQNxiik1Iqt02s" password="93332225454647ed831daac66e993873";
+    producer:
+        key-serializer: org.apache.kafka.common.serialization.LongSerializer
+        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+
+

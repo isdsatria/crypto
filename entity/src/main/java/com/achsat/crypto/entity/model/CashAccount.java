@@ -1,6 +1,7 @@
-package com.achsat.crypto.account.model;
+package com.achsat.crypto.entity.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+//import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -17,10 +18,12 @@ public class CashAccount {
     @Column("account_id")
     private Integer accountId;
     @Column("customer_id")
-    private Integer customerId;
+    private Long customerId;
     @Column("cash_balance")
     private BigDecimal cashBalance;
     @Column("date_created")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateCreated;
+    @Column("reserved_balance")
+    private BigDecimal reservedBalance;
 }

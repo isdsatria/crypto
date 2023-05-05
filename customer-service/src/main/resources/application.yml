@@ -1,0 +1,28 @@
+server:
+  port: 7778
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/customer
+    username: root
+    password:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/crypto
+          jwk-set-uri: http://localhost:8080/realms/crypto/protocol/openid-connect/certs
+
+spring.kafka:
+  bootstrap-servers: relieved-bull-11602-us1-kafka.upstash.io:9092
+  consumer:
+    key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  properties:
+    spring.json.trusted.packages: "*"
+    security.protocol: SASL_SSL
+    sasl.mechanism: SCRAM-SHA-256
+    sasl.jaas.config: org.apache.kafka.common.security.scram.ScramLoginModule required username="cmVsaWV2ZWQtYnVsbC0xMTYwMiSK_LVfdlU9eGK5O4UoDFR_WDVhZNs1QAlsx3w" password="22b2babe0c1d42d7aa3c5560ef6959f6";
+
+

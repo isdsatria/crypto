@@ -16,7 +16,13 @@
 	<description>parent module</description>
     <modules>
         <module>account-service</module>
-    </modules>
+		<module>customer-service</module>
+		<module>order-service</module>
+		<module>account-kafka-service</module>
+		<module>coin-service</module>
+        <module>entity</module>
+		<module>testkafka</module>
+	</modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
@@ -31,6 +37,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>

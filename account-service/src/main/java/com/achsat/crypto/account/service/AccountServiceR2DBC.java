@@ -1,7 +1,7 @@
 package com.achsat.crypto.account.service;
 
-import com.achsat.crypto.account.model.CashAccount;
-import com.achsat.crypto.account.model.TransactionHistory;
+import com.achsat.crypto.entity.model.CashAccount;
+import com.achsat.crypto.entity.model.TransactionHistory;
 import com.achsat.crypto.account.repository.CashAccountRepository;
 import com.achsat.crypto.account.repository.TransactionHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class AccountServiceR2DBC implements IAccountService {
 
     @Override
     @Transactional
-    public Mono<Void> IncreaseBalance(Integer accountId, BigDecimal amount) {
+    public Mono<Void> increaseBalance(Integer accountId, BigDecimal amount) {
 
         LocalDateTime time = LocalDateTime.now();
         TransactionHistory txnObj = new TransactionHistory(accountId, "Credit", amount,time);
@@ -47,7 +47,7 @@ public class AccountServiceR2DBC implements IAccountService {
 
     @Override
     @Transactional
-    public Mono<Void> DecreaseBalance(Integer accountId, BigDecimal amount) {
+    public Mono<Void> decreaseBalance(Integer accountId, BigDecimal amount) {
 
         LocalDateTime time = LocalDateTime.now();
         TransactionHistory txnObj = new TransactionHistory(accountId, "Debit", amount,time);
@@ -59,9 +59,37 @@ public class AccountServiceR2DBC implements IAccountService {
                 .then(transactionHistoryRepository.save(txnObj)).then();
     }
 
+    /*
+    @Override
+
+    public Mono<String> reserve(Order o) {
+        return accountRepository
+                .findCashAccountByCustomerId(o.getCustomerId())
+                .flatMap(e -> {
+                                if (e.getCashBalance().compareTo(BigDecimal.valueOf(o.getPrice()))<0) {
+                                    return "INADEQUATE";
+                                }else{
+                                    return "ADEQUATE";
+                                }
+
+                            }  )
+                .doOnNext(e -> e.setCashBalance(e.getCashBalance().subtract(BigDecimal.valueOf(o.getPrice()))))
+                .doOnNext(e-> e.setReservedBalance(BigDecimal.valueOf(o.getPrice())))
+                .flatMap(e-> accountRepository.save(e))
+                .just("ACCEPT");
+
+    }
+
+    @Override
+    public Mono<Void> confirm(Order o) {
+        return null;
+    }
+    */
+
 
     @Override
     public Mono<CashAccount> findAccountById(Integer id) {
         return accountRepository.findCashAccountByAccountId(id);
     }
+
 }
