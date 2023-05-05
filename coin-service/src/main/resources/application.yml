@@ -1,4 +1,11 @@
 spring.application.name: coin
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/crypto
+          jwk-set-uri: http://localhost:8080/realms/crypto/protocol/openid-connect/certs
 spring.kafka:
   bootstrap-servers: relieved-bull-11602-us1-kafka.upstash.io:9092
   properties:

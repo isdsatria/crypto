@@ -40,7 +40,7 @@ public class OrderController {
         this.kafkaStreamsFactory = kafkaStreamsFactory;
     }
 
-    @PostMapping("/order")
+    @PostMapping("/fin/order")
     public ResponseEntity<?> create(@RequestBody Order order) {
         Order savedOrder = orderService.addOrder(order);
         template.send("orders", order.getId(), savedOrder);
@@ -48,7 +48,7 @@ public class OrderController {
         return ResponseEntity.ok(savedOrder);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/inq/all")
     public ResponseEntity<?> getAllOrders() {
         return ResponseEntity.ok(orderService.getAllOrders());
     }
@@ -66,7 +66,7 @@ public class OrderController {
         return orders;
     }
 
-    @GetMapping("/id/{orderId}")
+    @GetMapping("/inq/id/{orderId}")
     public ResponseEntity<?> getOrderById(@PathVariable Long orderId) {
         Optional<Order> order = orderService.getOrderById(orderId);
         if (order.isPresent()) {
@@ -75,7 +75,7 @@ public class OrderController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/status/{status}")
+    @GetMapping("/inq/status/{status}")
     public ResponseEntity<List<Order>> getOrdersByStatus(@PathVariable String status) {
         List<Order> orders = orderService.getOrdersByStatus(status);
         return new ResponseEntity<>(orders, HttpStatus.OK);
